@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-const initialState = {
-  favColor: "",
+let initialState = {
+  favColor: "Blue",
   favFood: "Burgers"
 };
 
@@ -12,9 +12,9 @@ const reducer = (state = initialState, action) => {
     case "CLEAR_COLOR": 
       return {...state, favColor: ""};
     case "SET_FOOD":
-     return {...state, favFood: action.payload}
+     return {...state, favFood: action.payload};
     default: 
-      return console.log("hit default");
+      return state;
   }
 };
 
